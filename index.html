@@ -1,16 +1,187 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+      Max Bressler & Ethan Weiss
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbie Styled Page</title>
+    <!-- Link to Google Fonts for the Barbie-like font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        /* Reset body margin */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Pink gradient background */
+            padding-top: 120px; /* Space for navbar */
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #ff5ebc; /* Bright Barbie pink */
+            color: white; /* White text color */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            width: 100%; /* Makes the navbar full-width */
+            box-sizing: border-box; /* Includes padding in the width calculation */
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        /* Logo Styling */
+        .logo {
+            font-size: 36px; /* Large, bold text */
+            font-family: 'Lobster', cursive; /* Barbie-like cursive font */
+        }
+
+        /* Menu Button */
+        .menu-button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .menu-button div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 60px; /* Adjust for navbar height */
+            right: 30px;
+            background-color: #fff;
+            color: #ff5ebc;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #ff5ebc;
+            font-size: 16px;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #fef3f7; /* Light pink hover effect */
+        }
+
+        /* Show dropdown menu when active */
+        .menu-active .dropdown-menu {
+            display: block;
+        }
+
+        /* Grid container for images */
+        .image-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
+            gap: 100px; /* Spacing between grid items */
+            width: 90%; /* Controls the width of the container */
+            margin: 20px auto; /* Center the grid and add spacing */
+            padding: 10px;
+        }
+
+        /* For mobile responsiveness */
+        @media (max-width: 768px) {
+            .image-row {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust for smaller screens */
+            }
+        }
+    </style>
+    <script>
+        // JavaScript to toggle dropdown menu
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.querySelector('.menu-button');
+            const navbar = document.querySelector('.navbar');
+
+            menuButton.addEventListener('click', () => {
+                navbar.classList.toggle('menu-active');
+            });
+        });
+    </script>
 </head>
-
 <body>
-  Hello world
-  <script src="script.js"></script>
-</body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <!-- Logo -->
+        <div class="logo">Barbie</div>
 
+        <!-- Menu Button -->
+        <button class="menu-button">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div class="dropdown-menu">
+            <a href="goal.html">Goal</a>
+            <a href="information.html">Information</a>
+            <a href="cause.html">Cause</a>
+            <a href="donate.html">Where to Donate</a>
+        </div>
+    </div>
+
+    <!-- Image Placeholders Row -->
+    <div class="image-row">
+        <div class="image-container">
+            <img src="images/blond.png" alt="Dreamhouse">
+        </div>
+        <div class="image-container">
+            <img src="images/black.png" alt="Placeholder 1">
+        </div>
+        <div class="image-container">
+            <img src="images/asian.png" alt="Placeholder 2">
+        </div>
+    </div>
+</body>
+<style>
+    .image-container {
+        width: 100%;
+        overflow: hidden;
+        border-radius: 15px;
+        position: relative;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow for depth */
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .image-container:hover img {
+        transform: scale(1.1); /* Add a zoom effect on hover */
+    }
+    /website
+    index.html
+    goal.html
+    information.html
+    donate.html
+
+</style>
 </html>
